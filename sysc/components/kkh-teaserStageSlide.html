@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<template>
+    <picture>
+        <img bind:src="kkh_imageUrl" width="2000" height="1143" alt="" style="opacity: 1;">
+    </picture>
+    <a class="slider-stage__content" bind:href="kkh_link" tabindex="-1">
+        <h2 class="slider-stage__title">
+            <span>{{kkh_title}}</span>
+            <div class="slider-stage__text">
+                <p>{{kkh_description}}</p>
+            </div>
+        </h2>
+        <span class="slider-stage__button util-icon--after util-icon--arrow-right">
+            {{kkh_button}}
+        </span>
+    </a>
+
+
+</template>
+</body>
+</html>

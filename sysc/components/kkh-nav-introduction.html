@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <template>
+    <nav class="nav-introduction">
+      <div class="container">
+          <ul class="nav-introduction__list">
+              <li bind:for="let navpoint of navpoints" class="nav-introduction__list-item">
+                  <slot selector="kkh-nav-introduction-point" bind:index="index"></slot>
+              </li>
+          </ul>
+      </div>
+    </nav>
+  </template>
+</body>
+</html>

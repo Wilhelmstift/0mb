@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <template>
+        <div id="stageWrapper" class="stage-wrapper">
+            <div id="stage" class="stage">
+                <div class="slider-stage">
+                    <div bind:for="let slide of slides" class="slider-stage__item">
+                        <slot bind:index="index" selector="kkh-teaser-state-slide"></slot>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+</body>
+</html>
