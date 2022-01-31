@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:bind="http://www.w3.org/1999/XSL/Transform">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <template>
+        <form is="dom-form" bind:model="model">
+            <meta-input bind:for="let property of model.meta.properties" bind:model="property"></meta-input>
+            <button bind:for="let action of model.actions" type="button" bind:onclick="send(action)">{{action.rel}}</button>
+        </form>
+    </template>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <template>
+      <table is="mat-table" bind:items="items" bind:onmodel="onModel($event)" bind:create="create" bind:oncreate="onCreate()">
+          <colgroup>
+              <col bind:for="let column of model.columns" bind:path="column.name">
+          </colgroup>
+          <thead>
+            <tr>
+                <td bind:for="let column of model.columns">
+                    <div>{{column.name}}</div>
+                </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+                <td bind:for="let column of model.columns">
+                    <div let="data">
+                        <meta-column bind:meta="column" bind:model="data.${column.name}"></meta-column>
+                    </div>
+                </td>
+            </tr>
+          </tbody>
+      </table>
+  </template>
+</body>
+</html>
