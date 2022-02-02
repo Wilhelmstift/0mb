@@ -222,12 +222,14 @@ export const customComponents = new class CustomComponents {
             let scriptElement = html.querySelector("script");
             if (scriptElement) {
                 let textContent = scriptElement.textContent.replaceAll(/\s+/g, " ");
-                let rawMessagesFunction = eval("(" + textContent + ")")
-                let rawMessages = rawMessagesFunction();
-                for (const rawMessage of rawMessages) {
-                    let withoutSpaces = rawMessage["en"].replaceAll(" ", "");
-                    let message = i18nMessages[withoutSpaces] = {}
-                    message["de"] = rawMessage["de"];
+                if (textContent.indexOf("i18n") > -1) {
+                    let rawMessagesFunction = eval("(" + textContent + ")")
+                    let rawMessages = rawMessagesFunction();
+                    for (const rawMessage of rawMessages) {
+                        let withoutSpaces = rawMessage["en"].replaceAll(" ", "");
+                        let message = i18nMessages[withoutSpaces] = {}
+                        message["de"] = rawMessage["de"];
+                    }
                 }
             }
         }
